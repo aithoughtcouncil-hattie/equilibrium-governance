@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Missing Layer: reference demos for the governance overlay"
+authors:
+  - family-names: Maclean
+    given-names: Daniel
+    orcid: "https://orcid.org/0009-0004-7725-687X"
+license: MIT
+repository-code: "https://github.com/"
+version: "0.1.0"
+date-released: "2026-09-21"
