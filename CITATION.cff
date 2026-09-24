@@ -39,7 +39,7 @@ references:
         given-names: Daniel
         orcid: "https://orcid.org/0009-0004-7725-687X"
     year: 2026
-    doi: "10.5281/zenodo.PLACEHOLDER_PAPER1"
+    doi: "10.5281/zenodo.22912122"
 
   - type: article
     title: "Governed Measurement: Overlay for Room-Temperature NV Registers"
@@ -48,7 +48,7 @@ references:
         given-names: Daniel
         orcid: "https://orcid.org/0009-0004-7725-687X"
     year: 2026
-    doi: "10.5281/zenodo.PLACEHOLDER_PAPER2"
+    doi: "10.5281/zenodo.22942669"
 
   - type: article
     title: "ICE Fusion Architecture Under Governance"
@@ -57,7 +57,7 @@ references:
         given-names: Daniel
         orcid: "https://orcid.org/0009-0004-7725-687X"
     year: 2026
-    doi: "10.5281/zenodo.PLACEHOLDER_PAPER3"
+    doi: "10.5281/zenodo.22942675"
 
   - type: article
     title: "Equilibrium-Based Control as a Design Philosophy for Computing Systems"
@@ -66,4 +66,4 @@ references:
         given-names: Daniel
         orcid: "https://orcid.org/0009-0004-7725-687X"
     year: 2026
-    doi: "10.5281/zenodo.PLACEHOLDER_PAPER4"
+    doi: "10.5281/zenodo.22942681"

@@ -7,15 +7,19 @@ architecture (analytic eco chip model).
 
 ## Papers
 
-Four peer-review drafts, in `/papers/`:
+Four published preprints on Zenodo, PDFs mirrored in `/papers/`:
 
-- **[Governance 1 — The Missing Layer](papers/Maclean_2026_Governance1_The_Missing_Layer.pdf)**
+- **[Governance 1 — The Missing Layer](https://doi.org/10.5281/zenodo.22912122)** ([PDF](papers/Maclean_2026_Governance1_The_Missing_Layer.pdf))
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22912122.svg)](https://doi.org/10.5281/zenodo.22912122)
   Verifiable decision governance for high-stakes systems. Protocol properties P1-P6.
-- **[Governance 2 — Governed Measurement (NV)](papers/Maclean_2026_Governance2_Governed_Measurement_NV.pdf)**
+- **[Governance 2 — Governed Measurement (NV)](https://doi.org/10.5281/zenodo.22942669)** ([PDF](papers/Maclean_2026_Governance2_Governed_Measurement_NV.pdf))
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22942669.svg)](https://doi.org/10.5281/zenodo.22942669)
   Governance overlay for room-temperature NV registers.
-- **[Governance 3 — Governed Fusion Architecture](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.pdf)**
+- **[Governance 3 — Governed Fusion Architecture](https://doi.org/10.5281/zenodo.22942675)** ([PDF](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.pdf))
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22942675.svg)](https://doi.org/10.5281/zenodo.22942675)
   ICE fusion architecture under governance.
-- **[Governance 4 — Equilibrium Energy](papers/Maclean_2026_Governance4_Equilibrium_Energy.pdf)**
+- **[Governance 4 — Equilibrium Energy](https://doi.org/10.5281/zenodo.22942681)** ([PDF](papers/Maclean_2026_Governance4_Equilibrium_Energy.pdf))
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22942681.svg)](https://doi.org/10.5281/zenodo.22942681)
   Equilibrium-based control as a design philosophy for computing systems — measured cascade result plus analytic eco-chip model.
 
 ## Results
@@ -62,6 +66,15 @@ The series argues that the architectural absences behind known AI alignment fail
 - **Paper 5 — [A Letter to ASI](https://doi.org/10.5281/zenodo.22846424)**
   *The World We Could Build Together.*
   Not a research paper. A public-facing epilogue addressed to a future superintelligence, drawing out the implication of the preceding five.
+
+## Companion research: The Architecture Trilogy
+
+Four papers applying Initial Condition Ethics to political and institutional architecture. Published September 2026, open access under CC BY 4.0. Companion to the technical work in this repo — same framework, different scale.
+
+- **Paper 1 — [The Architecture of Peace](https://doi.org/10.5281/zenodo.22944269)**
+- **Paper 2 — [The Architecture of Contribution](https://doi.org/10.5281/zenodo.22944349)**
+- **Paper 3 — [The Architecture of Flourishing](https://doi.org/10.5281/zenodo.22945918)**
+- **Paper 4 — [Adversarial Stress-Test](https://doi.org/10.5281/zenodo.22946066)**
 
 ## Reproducing the results
 
