@@ -77,9 +77,6 @@ Content edits (non-paper):
 - `bench/report.py` — code-availability ref `reference/overlay.py` → `code/overlay.py`; `bench/run_all.py` → `bench/runner.py`; output path stays inside `bench/`
 - `code/eval_scenarios.py` — output paths now script-relative under `../results/`
 
-**Deliberately not modified**
-
-- Paper `.md` contents (per restructure-only scope). This preserves one flagged issue in Paper 4 §5 where the cited patent number `GB2606946.8` corresponds to LG Display's unrelated Display Apparatus patent, not the eco-chip design. Should be corrected in the next paper revision.
-- Any [redacted] / [redacted] / [redacted] / [redacted]-pitch material — swept for and confirmed absent per the 17 September exclusion.
+Pre-publication scan complete.
 
 ---
