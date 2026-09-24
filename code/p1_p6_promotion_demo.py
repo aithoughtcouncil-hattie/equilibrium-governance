@@ -1,8 +1,9 @@
 """
 Overlay on an AI learning loop: governed rule promotion (candidate -> core policy).
-Host = a developmental agent like [redacted]; its model and evaluator are mocked,
-so this runs with no API key. The overlay makes each promotion provable:
-committed criteria, recorded evaluation, authorised human approval, audit chain.
+Demonstrates the P1-P6 protocol properties on a mocked developmental agent
+(host model and evaluator are stubbed, so this runs with no API key). The
+overlay makes each promotion provable: committed criteria, recorded
+evaluation, authorised human approval, audit chain.
 """
 import copy
 from overlay import Overlay, verify_log

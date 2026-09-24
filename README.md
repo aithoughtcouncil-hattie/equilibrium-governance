@@ -33,7 +33,7 @@ MIT-licensed clean-room reference implementation in [`/code/`](code/):
 - [`eval_scenarios.py`](code/eval_scenarios.py) — ten-scenario evaluation harness; regenerates `/results/RESULTS_scenarios.md` and `.csv`
 - [`hallucination_gate_v1.py`](code/hallucination_gate_v1.py) / [`hallucination_gate_v2.py`](code/hallucination_gate_v2.py) — value-aware hallucination gate, v1 and v2
 - [`toy_ledger.py`](code/toy_ledger.py) — public-audit toy ledger (8 checks)
-- [`[redacted]_promotion.py`](code/[redacted]_promotion.py) — P1-P6 protocol demonstration
+- [`p1_p6_promotion_demo.py`](code/p1_p6_promotion_demo.py) — P1-P6 protocol promotion demonstration
 - [`bell_bias_sim.py`](code/bell_bias_sim.py), [`nv_governor_sweep.py`](code/nv_governor_sweep.py) — supporting simulations for Papers 2/3
 
 Every result in the *Results* section above is reproducible from the code and data in this repo.

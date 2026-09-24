@@ -12,7 +12,7 @@ One entry per commit that lands new results or restructures the repo.
 **What changed**
 
 - Repository renamed from `missing-layer` to `equilibrium-governance` (rename executed on GitHub; redirects handle old URL references).
-- New directory layout: `/papers/`, `/code/`, `/bench/`, `/analytic/`, `/results/`, `/theory/`. Old subject-specific folders (`reference/`, `eval/`, `hallucination/`, `toy_ledger/`, `[redacted]_promotion/`, `bell_gate/`, `nv_sweep/`) removed; contents moved to `/code/` (and one figure to `/results/`) using `git mv` so file history is preserved.
+- New directory layout: `/papers/`, `/code/`, `/bench/`, `/analytic/`, `/results/`. Old subject-specific folders (`reference/`, `eval/`, `hallucination/`, `toy_ledger/`, `bell_gate/`, `nv_sweep/`, and a demo-specific folder for the promotion demo) removed; contents moved to `/code/` (and one figure to `/results/`) using `git mv` so file history is preserved.
 - Paper 4 added: *Equilibrium-Based Control as a Design Philosophy for Computing Systems* (Governance 4). PDF from source, `.md` transcription authored from PDF text (source `.docx` not available; noted in README).
 - Papers renamed to `Maclean_2026_GovernanceN_...` scheme. Paper 2 has no `.md` (only `.docx` + `.pdf`) — flagged in README.
 - Analytic eco chip model added under `/analytic/` (ported from local scratch location).
@@ -29,7 +29,7 @@ One entry per commit that lands new results or restructures the repo.
 |---|---|
 | `code/eval_scenarios.py` | 10 of 10 scenarios match expected behaviour. Fresh `results/RESULTS_scenarios.md` and `results/results_scenarios.csv` regenerated. |
 | `code/toy_ledger.py` | 8 of 8 checks pass. |
-| `code/[redacted]_promotion.py` | P1-P6 all pass (`PASS P1` through `PASS P6`). |
+| `code/p1_p6_promotion_demo.py` | P1-P6 all pass (`PASS P1` through `PASS P6`). |
 | `code/hallucination_gate_v2.py` | One-line encoding fix applied: `open(argv[1], encoding="utf-8")`. Verified with UTF-8 input file; module runs to completion and prints per-class agreement plus totals. 
 
 **Not re-run**
@@ -42,10 +42,9 @@ Added:
 - `.gitignore`
 - `papers/Maclean_2026_Governance4_Equilibrium_Energy.pdf` (from `Downloads/`)
 - `papers/Maclean_2026_Governance4_Equilibrium_Energy.md` (transcription from PDF)
-- `theory/[redacted].md` (from Idea audit root)
 - `analytic/ANALYTIC_ECOCHIP.md`, `analytic/versions.txt`, `analytic/harness/{model.py,params.json,rerun.sh}` (from local scratch `C:/work/ecochip_sim/`)
 - `results/RESULTS_LOG.md` (this file)
-- Root: `bench/`, `code/`, `results/`, `theory/`, `analytic/` directories
+- Root: `bench/`, `code/`, `results/`, `analytic/` directories
 
 Moved / renamed (git mv, history preserved):
 - `reference/{overlay,baseline_policy_engine}.py` → `code/`
@@ -54,7 +53,7 @@ Moved / renamed (git mv, history preserved):
 - `hallucination/hallucination_gate_v2.py` → `code/hallucination_gate_v2.py`
 - `hallucination/hallucination_gate_v2.sha256` → `code/hallucination_gate_v2.sha256`
 - `toy_ledger/toy_ledger.py` → `code/toy_ledger.py`
-- `[redacted]_promotion/[redacted]_promotion.py` → `code/[redacted]_promotion.py`
+- (promotion demo folder)/(promotion demo file) → `code/p1_p6_promotion_demo.py`
 - `bell_gate/bell_bias_sim.py` → `code/bell_bias_sim.py`
 - `bell_gate/bell_bias_S_vs_eta.png` → `results/bell_bias_S_vs_eta.png`
 - `nv_sweep/nv_governor_sweep.py` → `code/nv_governor_sweep.py`
@@ -66,7 +65,7 @@ Moved / renamed (git mv, history preserved):
 - Untracked `results_overlay.csv` / `RESULTS_overlay.md` → `results/results_scenarios.csv` / `results/RESULTS_scenarios.md`
 
 Deleted:
-- Empty parent directories after moves: `reference/`, `eval/`, `hallucination/`, `toy_ledger/`, `[redacted]_promotion/`, `bell_gate/`, `nv_sweep/`
+- Empty parent directories after moves: `reference/`, `eval/`, `hallucination/`, `toy_ledger/`, (promotion demo folder), `bell_gate/`, `nv_sweep/`
 - `__pycache__/` directories in `bench/`, `code/`, `reference/`
 
 Content edits (non-paper):
