@@ -63,4 +63,4 @@ Three main reproductions. Each takes seconds to a few minutes.
 
 Clean-room reference implementation. MIT licensed. The production system that motivated this work is not in this repo.
 
-Dan Maclean, Thought Council · [thoughtcouncil.org](https://thoughtcouncil.org) · ORCID [0009-0004-7725-687X](https://orcid.org/0009-0004-7725-687X)
+Daniel Maclean, Thought Council · [thoughtcouncil.org](https://thoughtcouncil.org) · ORCID [0009-0004-7725-687X](https://orcid.org/0009-0004-7725-687X)
