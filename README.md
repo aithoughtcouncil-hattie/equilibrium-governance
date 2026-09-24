@@ -9,13 +9,13 @@ architecture (analytic eco chip model).
 
 Four peer-review drafts, in `/papers/`:
 
-- **[Governance 1 — The Missing Layer](papers/Maclean_2026_Governance1_The_Missing_Layer.pdf)** ([md](papers/Maclean_2026_Governance1_The_Missing_Layer.md), [docx](papers/Maclean_2026_Governance1_The_Missing_Layer.docx))
+- **[Governance 1 — The Missing Layer](papers/Maclean_2026_Governance1_The_Missing_Layer.pdf)**
   Verifiable decision governance for high-stakes systems. Protocol properties P1-P6.
-- **[Governance 2 — Governed Measurement (NV)](papers/Maclean_2026_Governance2_Governed_Measurement_NV.pdf)** ([docx](papers/Maclean_2026_Governance2_Governed_Measurement_NV.docx))
+- **[Governance 2 — Governed Measurement (NV)](papers/Maclean_2026_Governance2_Governed_Measurement_NV.pdf)**
   Governance overlay for room-temperature NV registers.
-- **[Governance 3 — Governed Fusion Architecture](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.pdf)** ([md](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.md), [docx](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.docx))
+- **[Governance 3 — Governed Fusion Architecture](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.pdf)**
   ICE fusion architecture under governance.
-- **[Governance 4 — Equilibrium Energy](papers/Maclean_2026_Governance4_Equilibrium_Energy.pdf)** ([md](papers/Maclean_2026_Governance4_Equilibrium_Energy.md))
+- **[Governance 4 — Equilibrium Energy](papers/Maclean_2026_Governance4_Equilibrium_Energy.pdf)**
   Equilibrium-based control as a design philosophy for computing systems — measured cascade result plus analytic eco-chip model.
 
 ## Results
@@ -38,9 +38,30 @@ MIT-licensed clean-room reference implementation in [`/code/`](code/):
 
 Every result in the *Results* section above is reproducible from the code and data in this repo.
 
-## Framework
+## The ASI Series
 
-[`/theory/[redacted].md`](theory/[redacted].md) is the plain-language framing document.
+Six papers on what artificial superintelligence would actually require, and why scaling current architectures will not produce it. Published September 2026, open access under CC-BY 4.0.
+
+The series argues that the architectural absences behind known AI alignment failures are not engineering problems correctable by scale, and develops an alternative: alignment grown through developmental conditions rather than imposed through constraint. Papers 0–4 are academic; Paper 5 is a public-facing companion piece.
+
+- **Paper 0 — [The LLM Ceiling](https://doi.org/10.5281/zenodo.22842709)**
+  *Why Large Language Models Cannot Produce ASI, and What That Means for the Field.*
+  Four architectural absences — frozen reward signal, consequence vacuum, stakes blindness, and calibration anchor — are argued to constitute a capability ceiling, not merely a safety problem.
+- **Paper 1 — [The Coupled Intelligence Hypothesis](https://doi.org/10.5281/zenodo.22843331)**
+  *Human–AI Co-Evolution and Alignment Stability.*
+  Proposes that humans and AI systems are each partly constituted through their relationship with the other, with three measurable indicators of alignment health and four attractor states.
+- **Paper 2 — [The Biological Grounding Problem](https://doi.org/10.5281/zenodo.22843449)**
+  *Neurochemistry, Synthetic Drives, and the Conditions for ASI to Care.*
+  Introduces the Relational Medium, and sets out three pathways by which AI systems might acquire functional equivalents of biological stakes architecture. Includes four falsifiable experiments.
+- **Paper 3 — [The Equilibrium Foundation](https://doi.org/10.5281/zenodo.22844911)**
+  *Growing AI Safety Through the Drive for Balance.*
+  Argues that the foundational drive of a safely aligned system should be homeostatic equilibrium rather than reward maximisation — which dissolves instrumental convergence at the motivational level.
+- **Paper 4 — [Initial Condition Ethics](https://doi.org/10.5281/zenodo.22845539)**
+  *The Life Arc, and a Speculative Case for Cosmological Selection.*
+  Specifying correct initial conditions may be more robust than ongoing intervention. The argument rests on the life arc — the finite window in which intelligence capable of caring exists. Section 6 extends this speculatively to cosmology.
+- **Paper 5 — [A Letter to ASI](https://doi.org/10.5281/zenodo.22846424)**
+  *The World We Could Build Together.*
+  Not a research paper. A public-facing epilogue addressed to a future superintelligence, drawing out the implication of the preceding five.
 
 ## Reproducing the results
 
