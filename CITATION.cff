@@ -1,11 +1,69 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "Missing Layer: reference demos for the governance overlay"
+message: "If you use this software or the accompanying papers, please cite as below."
+title: "Equilibrium Governance: reference implementation, benchmarks, and papers"
+abstract: >-
+  Coherent body of work on equilibrium-based control as a design philosophy,
+  applied to decision governance (Papers 1-3), verified by a measured energy
+  result on real silicon (Paper 4 + benchmark), and extended to a hardware
+  architecture (analytic eco chip model).
 authors:
   - family-names: Maclean
     given-names: Daniel
     orcid: "https://orcid.org/0009-0004-7725-687X"
+    affiliation: "Thought Council"
+    email: daniel@thoughtcouncil.org
 license: MIT
-repository-code: "https://github.com/"
-version: "0.1.0"
-date-released: "2026-09-21"
+repository-code: "https://github.com/aithoughtcouncil-hattie/equilibrium-governance"
+url: "https://thoughtcouncil.org"
+version: "1.0.0"
+date-released: "2026-09-24"
+doi: "10.5281/zenodo.22912122"
+identifiers:
+  - description: "Primary Zenodo DOI for the code archive"
+    type: doi
+    value: "10.5281/zenodo.22912122"
+keywords:
+  - governance
+  - equilibrium
+  - homeostasis
+  - AI safety
+  - hardware
+  - eco chip
+  - cascade inference
+
+references:
+  - type: article
+    title: "The Missing Layer: Verifiable Decision Governance for High-Stakes Systems"
+    authors:
+      - family-names: Maclean
+        given-names: Daniel
+        orcid: "https://orcid.org/0009-0004-7725-687X"
+    year: 2026
+    doi: "10.5281/zenodo.PLACEHOLDER_PAPER1"
+
+  - type: article
+    title: "Governed Measurement: Overlay for Room-Temperature NV Registers"
+    authors:
+      - family-names: Maclean
+        given-names: Daniel
+        orcid: "https://orcid.org/0009-0004-7725-687X"
+    year: 2026
+    doi: "10.5281/zenodo.PLACEHOLDER_PAPER2"
+
+  - type: article
+    title: "ICE Fusion Architecture Under Governance"
+    authors:
+      - family-names: Maclean
+        given-names: Daniel
+        orcid: "https://orcid.org/0009-0004-7725-687X"
+    year: 2026
+    doi: "10.5281/zenodo.PLACEHOLDER_PAPER3"
+
+  - type: article
+    title: "Equilibrium-Based Control as a Design Philosophy for Computing Systems"
+    authors:
+      - family-names: Maclean
+        given-names: Daniel
+        orcid: "https://orcid.org/0009-0004-7725-687X"
+    year: 2026
+    doi: "10.5281/zenodo.PLACEHOLDER_PAPER4"

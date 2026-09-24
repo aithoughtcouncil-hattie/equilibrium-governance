@@ -1,0 +1,36 @@
+ANALYTIC_ECOCHIP tool / environment fingerprint
+Generated: 2026-09-24
+
+Approach: analytic arithmetic (no simulator).
+No gem5, McPAT, Aladdin, or SPICE used or attempted.
+Justification: the patent draft lacks the die-area, cache, memory-
+bandwidth, and dataflow parameters those tools require; the honest
+alternative is documented arithmetic against public data.
+
+Host
+  OS: Windows 10 Home 10.0.19045
+  CPU: Intel i7-8700 (6c/12t)
+  RAM: 31.9 GB
+
+Runtime
+  Python: 3.12.10 (stdlib only for the model)
+  Shell: Git Bash 2.x (rerun.sh) / PowerShell 5.1 (native alt)
+
+Data sources referenced (dates as accessed 2026-09-24)
+  NVIDIA H100 datasheet — nvidia.com
+  AMD MI300X product brief — amd.com
+  MLPerf Inference v5.0 / v5.1 results — mlcommons.org, HPCwire
+  Cisco UCS C885A M8 HGX MLPerf whitepaper — cisco.com
+  ACS Materials "AI chip thermal wall" — acsmaterial.com
+  Apple M-series sustained benchmarks — publicly reported (Anandtech,
+    Notebookcheck, etc.)
+  7nm thermal density literature — general public sources
+
+Inputs
+  harness/params.json (every value carries a source / confidence
+  tag in the file and in the report's assumptions table)
+
+Reproducibility
+  Every number in ANALYTIC_ECOCHIP.md §5-7 is produced by
+  `python harness/model.py`.  No external calls, no random seeds,
+  no wall-clock dependence.  Same params.json → identical output.

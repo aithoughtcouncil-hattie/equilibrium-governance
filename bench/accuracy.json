@@ -1,0 +1,71 @@
+{
+  "n": 1000,
+  "decisive_frac": 0.6,
+  "decisive_items_scored": 600,
+  "lexicon_abstentions_on_supposedly_decisive": 0,
+  "confusion_matrix": {
+    "rows_are_lexicon_label__cols_are_distilbert_label": true,
+    "labels": [
+      "neg=0",
+      "pos=1"
+    ],
+    "matrix": [
+      [
+        300,
+        0
+      ],
+      [
+        0,
+        300
+      ]
+    ],
+    "TN_lex_neg_db_neg": 300,
+    "FN_lex_neg_db_pos": 0,
+    "FP_lex_pos_db_neg": 0,
+    "TP_lex_pos_db_pos": 300
+  },
+  "agreement_rate": 1.0,
+  "disagreement_count": 0,
+  "positive_class_precision": 1.0,
+  "positive_class_recall": 1.0,
+  "negative_class_precision": 1.0,
+  "negative_class_recall": 1.0,
+  "decisive_share_of_input": 0.6,
+  "ambiguous_share_of_input": 0.4,
+  "correct_share_cascade_under_distilbert_truth": 1.0,
+  "per_metric_energy_per_correct": {
+    "wall_ms_per_decision": {
+      "B1_per_decision": 13.201855399956306,
+      "B2_per_decision": 5.617918166642387,
+      "B2_per_correct": 5.617918166642387,
+      "ratio_B2_per_correct_over_B1": 0.4255400469437789
+    },
+    "cpu_ms_per_decision": {
+      "B1_per_decision": 79.09895833333333,
+      "B2_per_decision": 33.614583333333336,
+      "B2_per_correct": 33.614583333333336,
+      "ratio_B2_per_correct_over_B1": 0.42496872325014823
+    },
+    "energy_j_estimated_per_decision": {
+      "B1_per_decision": 0.8569053819444444,
+      "B2_per_decision": 0.3641579861111111,
+      "B2_per_correct": 0.3641579861111111,
+      "ratio_B2_per_correct_over_B1": 0.4249687232501482
+    },
+    "energy_j_measured_per_decision": {
+      "B1_per_decision": 0.908365002522406,
+      "B2_per_decision": 0.33418509153623016,
+      "B2_per_correct": 0.33418509153623016,
+      "ratio_B2_per_correct_over_B1": 0.3678973657155919
+    },
+    "energy_j_delta_per_decision": {
+      "B1_per_decision": 0.7736837014167501,
+      "B2_per_decision": 0.2768728043412801,
+      "B2_per_correct": 0.2768728043412801,
+      "ratio_B2_per_correct_over_B1": 0.3578630438178775
+    }
+  },
+  "example_disagreements": [],
+  "duration_s": 7.870135399978608,
+  "timestamp": "2026-09-24T04:30:23"
+}

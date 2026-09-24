@@ -1,0 +1,82 @@
+{
+  "n": 1000,
+  "decisive_frac": 0.6,
+  "decisive_items_scored": 596,
+  "lexicon_abstentions_on_supposedly_decisive": 4,
+  "confusion_matrix": {
+    "rows_are_lexicon_label__cols_are_distilbert_label": true,
+    "labels": [
+      "neg=0",
+      "pos=1"
+    ],
+    "matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        594
+      ]
+    ],
+    "TN_lex_neg_db_neg": 0,
+    "FN_lex_neg_db_pos": 0,
+    "FP_lex_pos_db_neg": 2,
+    "TP_lex_pos_db_pos": 594
+  },
+  "agreement_rate": 0.9966442953020134,
+  "disagreement_count": 2,
+  "positive_class_precision": 0.9966442953020134,
+  "positive_class_recall": 1.0,
+  "negative_class_precision": null,
+  "negative_class_recall": 0.0,
+  "decisive_share_of_input": 0.6,
+  "ambiguous_share_of_input": 0.4,
+  "correct_share_cascade_under_distilbert_truth": 0.997986577181208,
+  "per_metric_energy_per_correct": {
+    "wall_ms_per_decision": {
+      "B1_per_decision": 13.193636866674447,
+      "B2_per_decision": 5.520563733337137,
+      "B2_per_correct": 5.531701387136741,
+      "ratio_B2_per_correct_over_B1": 0.4192703985289423
+    },
+    "cpu_ms_per_decision": {
+      "B1_per_decision": 79.03645833333333,
+      "B2_per_decision": 33.109375,
+      "B2_per_correct": 33.17617266308003,
+      "ratio_B2_per_correct_over_B1": 0.4197578353417704
+    },
+    "energy_j_estimated_per_decision": {
+      "B1_per_decision": 0.8562282986111112,
+      "B2_per_decision": 0.35868489583333335,
+      "B2_per_correct": 0.359408537183367,
+      "ratio_B2_per_correct_over_B1": 0.4197578353417704
+    },
+    "energy_j_measured_per_decision": {
+      "B1_per_decision": 0.8970812690620931,
+      "B2_per_decision": 0.34159420029904575,
+      "B2_per_correct": 0.3422833614294406,
+      "ratio_B2_per_correct_over_B1": 0.3815522330404926
+    },
+    "energy_j_delta_per_decision": {
+      "B1_per_decision": 0.7604488601546678,
+      "B2_per_decision": 0.28442361655211373,
+      "B2_per_correct": 0.28499743689485507,
+      "ratio_B2_per_correct_over_B1": 0.37477528316222264
+    }
+  },
+  "example_disagreements": [
+    {
+      "text": "A best purchase, great value and love performance, I regret it.",
+      "lexicon": 1,
+      "distilbert": 0
+    },
+    {
+      "text": "A best purchase, great value and superb performance, I regret it.",
+      "lexicon": 1,
+      "distilbert": 0
+    }
+  ],
+  "duration_s": 7.948334899963811,
+  "timestamp": "2026-09-24T04:17:26"
+}

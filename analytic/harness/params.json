@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "description": "All assumptions feeding the analytic Eco Chip energy/TOPS model.",
+    "note": "Every value here has a source (or 'derived') noted in ANALYTIC_ECOCHIP.md §Assumptions."
+  },
+
+  "patent_claims": {
+    "peak_tops_total": 1500,
+    "sustained_tops_eco": 1260,
+    "sustained_tops_conv": 900,
+    "power_w_eco": 460,
+    "power_w_conv": 450,
+    "sustained_tops_per_w_eco": 2.74,
+    "sustained_tops_per_w_conv": 2.00,
+    "sustained_fraction_eco": 0.84,
+    "sustained_fraction_conv": 0.60,
+    "throughput_advantage_pct": 40,
+    "compute_dies": 3,
+    "governance_die_power_w_max": 5,
+    "compute_die_process_nm": 7,
+    "governance_die_process_nm": 28,
+    "clock_ghz": 3.0,
+    "cfc_power_mw": 10,
+    "spr_settling_ns_max": 100,
+    "temp_target_c": 55,
+    "temp_conv_c_low": 85,
+    "temp_conv_c_high": 95
+  },
+
+  "sustained_fraction_model": {
+    "conventional_reactive_range": {
+      "low": 0.50,
+      "mid": 0.60,
+      "high": 0.70,
+      "source": "MLPerf inference results across data-center accelerators typically show sustained-vs-peak ratios in this band under continuous inference load; corroborated by NVIDIA's public MLPerf submissions where sustained throughput year-over-year gains of 60-150% relative to prior-year same-hardware imply substantial software-recoverable headroom above sustained hardware baseline"
+    },
+    "proactive_homeostatic_range": {
+      "low": 0.70,
+      "mid": 0.80,
+      "high": 0.88,
+      "source": "Apple M-series with aggressive DVFS sustains ~85-95% of peak on many workloads at lower TDPs (~20-40W); scaling to 460W stack with sufficient cooling budget puts achievable sustained fraction in the 70-88% range depending on cooling capacity"
+    },
+    "delta_range_percentage_points": {
+      "low": 10,
+      "mid": 20,
+      "high": 30,
+      "patent_claim_pp": 24
+    }
+  },
+
+  "commercial_baselines": {
+    "nvidia_h100_sxm5": {
+      "peak_int8_tops_dense": 1979,
+      "peak_int8_tops_sparse": 3958,
+      "tdp_w": 700,
+      "peak_tops_per_w_dense": 2.83,
+      "peak_tops_per_w_sparse": 5.65,
+      "estimated_sustained_fraction": 0.65,
+      "source": "NVIDIA H100 datasheet (peak); MLPerf inference v5.1 submissions (sustained observed)"
+    },
+    "amd_mi300x": {
+      "peak_int8_tops_dense": 2610,
+      "peak_int8_tops_sparse": 5220,
+      "tdp_w": 750,
+      "peak_tops_per_w_dense": 3.48,
+      "estimated_sustained_fraction": 0.60,
+      "source": "AMD MI300X product brief"
+    },
+    "nvidia_gh200_grace_hopper": {
+      "peak_int8_tops_dense": 1979,
+      "tdp_w": 700,
+      "note": "Uses H100 GPU die; TOPS/W similar to H100 SXM5"
+    }
+  },
+
+  "cascade": {
+    "decisive_fraction": 0.60,
+    "ambiguous_fraction": 0.40,
+    "measured_energy_ratio_cascade_vs_full": 0.375,
+    "source": "BENCH_ECOCHIP.md v2 run: idle-delta measured energy per decision, B2 cascade vs B1 DistilBERT-alone",
+    "note": "This ratio applies at software-decision level. It does NOT translate 1:1 into a hardware TOPS/W improvement — cascade reduces useful-decisions-per-cycle demand, not per-cycle efficiency. Reported here for decisions/J only, not TOPS/W."
+  },
+
+  "die_area_and_power_density_estimates": {
+    "compute_die_area_mm2_estimate": 800,
+    "compute_die_area_source": "Comparable AI compute dies at 7nm range 600-1000 mm² (H100 GPU die is 814 mm² at TSMC 4N which is 7nm-class)",
+    "compute_die_tdp_w_estimate": 150,
+    "compute_die_power_density_w_per_mm2": 0.188,
+    "compute_die_power_density_source": "Data-center AI accelerators sustain 5-10 W/mm² average heat flux with local hotspots higher; 0.19 W/mm² is well below thermal-density ceiling, consistent with a die designed for proactive homeostasis rather than peak-throttle operation"
+  }
+}

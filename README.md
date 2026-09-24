@@ -1,51 +1,66 @@
-# Missing Layer — reference demos
+# Equilibrium Governance
 
-Companion code for the three-paper package by Daniel Maclean
-(ORCID 0009-0004-7725-687X): *The Missing Layer* (Doc 1),
-*NV-Governed Measurement* (Doc 2), *ICE Fusion Architecture* (Doc 3).
-Papers are in `papers/`.
+Coherent body of work on equilibrium-based control as a design philosophy,
+applied to decision governance (Papers 1-3), verified by a measured energy
+result on real silicon (Paper 4 + benchmark), and extended to a hardware
+architecture (analytic eco chip model).
 
-Each folder is a small, self-contained demo. They are demonstrations of the
-governance overlay applied to a specific setting, not production
-implementations. Every demo prints its own PASS/FAIL lines.
+## Papers
 
-**Provenance.** This is a **clean-room reference implementation** of the
-protocol specified in the papers, licensed MIT. The production system
-that the design derives from is not in this repository and is not
-covered by this licence.
+Four peer-review drafts, in `/papers/`:
 
-## Setup
+- **[Governance 1 — The Missing Layer](papers/Maclean_2026_Governance1_The_Missing_Layer.pdf)** ([md](papers/Maclean_2026_Governance1_The_Missing_Layer.md), [docx](papers/Maclean_2026_Governance1_The_Missing_Layer.docx))
+  Verifiable decision governance for high-stakes systems. Protocol properties P1-P6.
+- **[Governance 2 — Governed Measurement (NV)](papers/Maclean_2026_Governance2_Governed_Measurement_NV.pdf)** ([docx](papers/Maclean_2026_Governance2_Governed_Measurement_NV.docx))
+  Governance overlay for room-temperature NV registers.
+- **[Governance 3 — Governed Fusion Architecture](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.pdf)** ([md](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.md), [docx](papers/Maclean_2026_Governance3_Governed_Fusion_Architecture.docx))
+  ICE fusion architecture under governance.
+- **[Governance 4 — Equilibrium Energy](papers/Maclean_2026_Governance4_Equilibrium_Energy.pdf)** ([md](papers/Maclean_2026_Governance4_Equilibrium_Energy.md))
+  Equilibrium-based control as a design philosophy for computing systems — measured cascade result plus analytic eco-chip model.
 
-```
-pip install cryptography numpy scipy matplotlib
-```
+## Results
 
-Python 3.10+ is expected. No API keys required for the demos below.
+- **Cascade energy benchmark** — 36% of DistilBERT-alone energy per correct decision, 100% agreement in both directions on the fixed-template dataset (600 items, 3 reps, LHM package-power measurement with 60s idle baseline subtracted). See [`/bench/BENCH_ECOCHIP.md`](bench/BENCH_ECOCHIP.md) for the run report and [`/bench/`](bench/) for the harness and raw data.
+- **Analytic eco chip model** — the patent's 2.74 TOPS/W claim falls inside the defensible analytic range [2.28, 2.87] with mid-scenario 2.61. Load-bearing sub-claim is the sustained-fraction assumption; if it collapses to the conventional value the TOPS/W falls below the 2.0 baseline. See [`/analytic/ANALYTIC_ECOCHIP.md`](analytic/ANALYTIC_ECOCHIP.md).
+- **Ten-scenario evaluation of the governance overlay** — 10 of 10 scenarios match the specification, including tamper-evidence, gate-order enforcement, and permit-binding checks. See [`/results/RESULTS_scenarios.md`](results/RESULTS_scenarios.md).
 
-## Demos
+## Code
 
-| Folder | What it shows | Run | Limits |
-|---|---|---|---|
-| `reference/` | The governance overlay itself: `Overlay`, `AuditLog`, canonical hashing (`overlay.py`), plus a single-decision `baseline_policy_engine.py` used for comparison in the evaluation. All other demos import the overlay. | (imported) | Reference implementation; not hardened. |
-| `eval/` | The 10-scenario overlay evaluation table (Doc 1 §4). Scenario 12 is included **as a demonstrated limit** — the integrity verifier accepts a re-signed log, and only the protocol verifier notices missing gate records; a key holder who fabricates a complete, consistent sequence is not detectable from the log. | `python eval_overlay.py` | Synthetic scenarios; latencies depend on hardware. |
-| `bell_gate/` | Detection-loophole-aware CHSH gate: shows the "S = 2.690 at η = 0.853" trap and the correct audit verdict (Doc 1 §5.4, Doc 2 worked example). Also writes `bell_bias_S_vs_eta.png`. | `python bell_bias_sim.py` | Idealised biased-sampling model; no error bars, no real detector physics. |
-| `nv_sweep/` | NV-centre governor sweep (Doc 2). Version 1 gates on measurement, Version 2 on predicted fidelity, Version 3 does a two-system double check. Reports BAF (bad-action fraction) and GRF (good-run rejection fraction) against pre-stated targets. | `python nv_governor_sweep.py` | Simulated system, not a real NV rig. Batches within a session are correlated; point estimates only. |
-| `[redacted]_promotion/` | Governance around a promotion decision for a hypothetical [redacted]: qualifying rule, authorised approver, threshold, mid-case tampering, evaluator uncertainty, offline audit trail (Doc 1 §5.2). | `python [redacted]_promotion.py` | Toy governance rules; no real learning system involved. |
-| `toy_ledger/` | Public governance chain + private transaction chain, verifiable by a citizen holding only the genesis hash and a signed checkpoint (Doc 1 §5.3). | `python toy_ledger.py` | Toy; single-node; no consensus, no replay resistance beyond the chain. |
-| `hallucination/` | Numbers-and-citations gate. Two versions: `hallucination_gate.py` (v1, token-equality) and `hallucination_gate_v2.py` (v2, **value-aware** — parses digits and number words, converts units, precision-aware match, derived percentages, claim-binding by nearby content words, plus citation check). **Both are deterministic and require no language-model inference.** SHA-256 of v2 is pinned in `hallucination_gate_v2.sha256`. | `python hallucination_gate.py` (smoke), or `python hallucination_gate.py data.jsonl` / `python hallucination_gate_v2.py data.jsonl` on a labelled corpus | v1 known blind spot: spelled-out numbers ("ninety"). v2 handles those but is still a numeric/citation gate — non-numeric hallucinations are not its target. |
-| `papers/` | *The Missing Layer* (Doc 1), *NV-Governed Measurement* (Doc 2), *ICE Fusion Architecture* (Doc 3), each in `.md`, `.docx` and `.pdf`. | — | See each paper for scope and limits. |
+MIT-licensed clean-room reference implementation in [`/code/`](code/):
 
-## What "PASS" means here
+- [`overlay.py`](code/overlay.py) — three-gate governance overlay (pre/mid/post) with signed audit log
+- [`baseline_policy_engine.py`](code/baseline_policy_engine.py) — conventional policy-engine baseline for scenario comparison
+- [`eval_scenarios.py`](code/eval_scenarios.py) — ten-scenario evaluation harness; regenerates `/results/RESULTS_scenarios.md` and `.csv`
+- [`hallucination_gate_v1.py`](code/hallucination_gate_v1.py) / [`hallucination_gate_v2.py`](code/hallucination_gate_v2.py) — value-aware hallucination gate, v1 and v2
+- [`toy_ledger.py`](code/toy_ledger.py) — public-audit toy ledger (8 checks)
+- [`[redacted]_promotion.py`](code/[redacted]_promotion.py) — P1-P6 protocol demonstration
+- [`bell_bias_sim.py`](code/bell_bias_sim.py), [`nv_governor_sweep.py`](code/nv_governor_sweep.py) — supporting simulations for Papers 2/3
 
-Each script prints PASS/FAIL for pre-stated checks. PASS means the overlay
-behaved as specified. It does NOT mean the underlying scientific claim is
-proven — see the paper for what each demo does and does not settle.
+Every result in the *Results* section above is reproducible from the code and data in this repo.
 
-## License
+## Framework
 
-MIT — see `LICENSE`. Applies to this reference implementation only; see
-**Provenance** above.
+[`/theory/[redacted].md`](theory/[redacted].md) is the plain-language framing document.
 
-## Cite
+## Reproducing the results
 
-See `CITATION.cff`.
+Three main reproductions. Each takes seconds to a few minutes.
+
+1. **Scenario evaluation** (regenerates `/results/RESULTS_scenarios.md` and `results_scenarios.csv`):
+   ```bash
+   python code/eval_scenarios.py
+   ```
+
+2. **Cascade energy benchmark** — follow [`bench/README.md`](bench/README.md). Full run needs `python bench/runner.py` (60s idle + 3 reps × 4 workloads ≈ 5 min), then `python bench/accuracy_check.py`, then `python bench/report.py`. Measured energy columns require LibreHardwareMonitor running as administrator with the Remote Web Server enabled on port 8085; without it the harness falls back to a CPU-time energy estimate.
+
+3. **Analytic eco chip model**:
+   ```bash
+   bash analytic/harness/rerun.sh
+   ```
+   Pure arithmetic on documented inputs. No external dependencies beyond a standard Python install.
+
+## Provenance
+
+Clean-room reference implementation. MIT licensed. The production system that motivated this work is not in this repo.
+
+Dan Maclean, Thought Council · [thoughtcouncil.org](https://thoughtcouncil.org) · ORCID [0009-0004-7725-687X](https://orcid.org/0009-0004-7725-687X)

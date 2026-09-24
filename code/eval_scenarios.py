@@ -3,6 +3,8 @@ Deterministic; each scenario is run 20 times only to report timing."""
 import copy, csv, statistics, time
 from overlay import Overlay, verify_log, verify_protocol, H
 from baseline_policy_engine import PolicyEngine
+import os as _os
+_RESULTS = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', 'results')
 
 GOV = {"version": 1, "required_evidence": ["invoice", "approval"],
        "authorised_actors": ["alice"],
@@ -78,12 +80,12 @@ for n, name, exp, fn, bfn in SCEN:
     rows.append([n, name, exp, got, "yes" if got == exp else "NO", bfn(), f"{statistics.median(ts):.2f}"])
 
 hdr = ["#", "Scenario", "Expected", "Overlay", "As expected", "Policy-engine baseline", "Median ms (overlay)"]
-with open("results_overlay.csv", "w", newline="") as f: csv.writer(f).writerows([hdr] + rows)
-with open("RESULTS_overlay.md", "w") as f:
+with open(_os.path.join(_RESULTS, "results_scenarios.csv"), "w", newline="") as f: csv.writer(f).writerows([hdr] + rows)
+with open(_os.path.join(_RESULTS, "RESULTS_scenarios.md"), "w") as f:
     f.write("| " + " | ".join(hdr) + " |\n|" + "---|" * len(hdr) + "\n")
     for r in rows: f.write("| " + " | ".join(map(str, r)) + " |\n")
     f.write(f"\nOverlay behaved as expected in {sum(r[4]=='yes' for r in rows)} of {len(rows)} scenarios. "
             "Scenario 10 passing is the designed limit. Scenario 12: the chain verifier alone cannot detect a "
             "forged record from a key holder; the protocol verifier detects the missing gate records, but a key "
             "holder who fabricates a complete, consistent sequence is not detectable from the log.\n")
-print(open("RESULTS_overlay.md").read())
+print(open(_os.path.join(_RESULTS, "RESULTS_scenarios.md")).read())

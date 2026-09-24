@@ -103,7 +103,7 @@ def wilson(k, n, z=1.96):
     return round(c - h, 3), round(c + h, 3)
 
 if __name__ == "__main__":
-    items = [json.loads(l) for l in open(sys.argv[1]) if l.strip()]
+    items = [json.loads(l) for l in open(sys.argv[1], encoding='utf-8') if l.strip()]
     by = {}
     for it in items:
         v, _ = gate(it["source"], it["answer"])
